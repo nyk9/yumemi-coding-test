@@ -1,6 +1,8 @@
+import { PrefecturesResponse } from "@/types/prefectures/prefectures";
+
 export async function getPrefectures() {
     try {
-        const response = await fetch(String(process.env.NEXT_PUBLIC_API_URL)+ '/api/v1/prefectures', {
+        const response: Promise<PrefecturesResponse> = await fetch(String(process.env.NEXT_PUBLIC_API_URL)+ '/api/v1/prefectures', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8',
