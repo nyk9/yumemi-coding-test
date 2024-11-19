@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const usePrefectures = () => {
   const [checkedPrefectures, setCheckedPrefectures] = useState<number[]>([]);
@@ -10,6 +10,5 @@ export const usePrefectures = () => {
       setCheckedPrefectures([...checkedPrefectures, prefCode]);
     }
   };
-  useEffect(() => {}, [checkedPrefectures]);
   return { checkedPrefectures, handleCheckedPrefectures };
 };
