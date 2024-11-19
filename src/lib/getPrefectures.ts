@@ -1,4 +1,4 @@
-import { PrefecturesResponse } from "@/types/prefectures/prefectures";
+import { Prefectures, PrefecturesResponse } from "@/types/prefectures/prefectures";
 
 export async function getPrefectures() {
   try {
@@ -17,4 +17,15 @@ export async function getPrefectures() {
   } catch (error) {
     console.error("Error:", error);
   }
+}
+
+export function getPrefName(params: Prefectures[], prefCode: number) {
+  let prefName = "";
+  params.map((pref) => {
+    if (pref.prefCode === prefCode) {
+      prefName = pref.prefName;
+      return;
+    }
+  });
+  return prefName;
 }
