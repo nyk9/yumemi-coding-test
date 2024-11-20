@@ -17,6 +17,7 @@ import {
   Title,
   Tooltip
 } from "chart.js";
+import { setPrefColors } from "@/types/prefectures/setPrefColors";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function PopulationLine(props: {
@@ -35,6 +36,11 @@ export default function PopulationLine(props: {
         display: true,
         text: ""
       }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
     }
   };
   useEffect(() => {
@@ -49,14 +55,14 @@ export default function PopulationLine(props: {
         props.populations[pref - 1].result.data[0].data.map((populData) => {
           data.push(populData.value);
         });
-        return { label: prefName, data };
+        return { label: prefName, data, borderColor: setPrefColors[pref - 1] };
       });
       setLineData({ labels: label, datasets: newDataSets });
     }
   }, [props.checkedPrefectures, props.populations, props.prefectures]);
 
   return (
-    <div className="bg-zinc-600 min-w-full">
+    <div className="bg-blue-50 min-w-full">
       <Line options={options} data={lineData} />
     </div>
   );
