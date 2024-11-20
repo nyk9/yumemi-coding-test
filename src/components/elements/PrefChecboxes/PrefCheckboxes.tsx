@@ -1,5 +1,6 @@
 "use client";
 
+import { setPrefColors } from "@/types/prefectures/setPrefColors";
 import { PrefecturesResponse } from "@/types/prefectures/prefectures";
 
 export function PrefCheckboxes(data: {
@@ -17,7 +18,14 @@ export function PrefCheckboxes(data: {
                 value={pref.prefCode}
                 onChange={() => data.handleFunc(pref.prefCode)}
               />
-              <span>{pref.prefName}</span>
+              <span
+                className="border-b-4"
+                style={{
+                  borderBottomColor: setPrefColors[pref.prefCode - 1]
+                }}
+              >
+                {pref.prefName}
+              </span>
             </label>
           );
         })}
