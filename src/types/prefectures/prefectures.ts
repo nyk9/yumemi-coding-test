@@ -1,9 +1,9 @@
 export interface Prefectures {
-    prefCode: number;
-    prefName: string;
+  prefCode: number;
+  prefName: string;
 }
 
 export interface PrefecturesResponse {
-    massage: null;
-    result: Prefectures[];
+  massage: null;
+  result: Prefectures[];
 }
