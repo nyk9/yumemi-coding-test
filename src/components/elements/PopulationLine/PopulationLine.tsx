@@ -24,6 +24,7 @@ export default function PopulationLine(props: {
   populations: PopulationResponse[];
   prefectures: PrefecturesResponse;
   checkedPrefectures: number[];
+  selectedPopulType: number;
 }) {
   const [lineData, setLineData] = useState<data>({ labels: [], datasets: [] });
   const options = {
@@ -34,7 +35,9 @@ export default function PopulationLine(props: {
       },
       title: {
         display: true,
-        text: ""
+        text: props.populations[0]
+          ? props.populations[0].result.data[props.selectedPopulType].label
+          : ""
       }
     },
     scales: {
@@ -46,20 +49,20 @@ export default function PopulationLine(props: {
   useEffect(() => {
     if (props.checkedPrefectures.length >= 1) {
       const label: string[] = [];
-      props.populations[0].result.data[0].data.map((populData) => {
+      props.populations[0].result.data[props.selectedPopulType].data.map((populData) => {
         label.push(String(populData.year));
       });
       const newDataSets = props.checkedPrefectures.map((pref) => {
         const data: number[] = [];
         const prefName = getPrefName(props.prefectures.result, pref);
-        props.populations[pref - 1].result.data[0].data.map((populData) => {
+        props.populations[pref - 1].result.data[props.selectedPopulType].data.map((populData) => {
           data.push(populData.value);
         });
         return { label: prefName, data, borderColor: setPrefColors[pref - 1] };
       });
       setLineData({ labels: label, datasets: newDataSets });
     }
-  }, [props.checkedPrefectures, props.populations, props.prefectures]);
+  }, [props.checkedPrefectures, props.populations, props.prefectures, props.selectedPopulType]);
 
   return (
     <div className="bg-blue-50 min-w-full">
