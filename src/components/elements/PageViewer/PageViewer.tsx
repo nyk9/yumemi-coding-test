@@ -6,7 +6,7 @@ import { PopulationResponse } from "@/types/populations/populations";
 import { PrefecturesResponse } from "@/types/prefectures/prefectures";
 import PopulationLine from "../PopulationLine/PopulationLine";
 
-export default function Pref(params: {
+export default function PageViewer(params: {
   prefs: PrefecturesResponse;
   populations: PopulationResponse[];
 }) {
