@@ -1,6 +1,4 @@
-// import PopulationLine from "@/components/elements/PopulationLine/PopulationLine";
-import Pref from "@/components/elements/Pref/Pref";
-// import { PrefCheckboxes } from "@/components/elements/PrefChecboxes/PrefCheckboxes";
+import PageViewer from "@/components/elements/PageViewer/PageViewer";
 import { getPopulation } from "@/lib/getPopulation";
 import { getPrefectures } from "@/lib/getPrefectures";
 import { PopulationResponse } from "@/types/populations/populations";
@@ -22,10 +20,10 @@ export default async function Home() {
     }
   }
   return (
-    <div className="items-center justify-items-center min-h-screen p-3 sm:p-10 font-[family-name:var(--font-geist-sans)]">
+    <div className="items-center justify-items-center max-h-screen p-3 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       <Suspense fallback={<>loading</>}>
         {/* <PrefCheckboxes prefs={prefectures} populations={populations} /> */}
-        <Pref prefs={prefectures} populations={populations} />
+        <PageViewer prefs={prefectures} populations={populations} />
       </Suspense>
       {/* <PopulationLine populations={populations} prefectures={prefectures} /> */}
     </div>
