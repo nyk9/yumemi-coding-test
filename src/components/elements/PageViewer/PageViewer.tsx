@@ -1,14 +1,14 @@
 "use client";
 
 import { usePrefectures } from "@/hooks/usePrefectures";
-import { PrefCheckboxes } from "../PrefChecboxes/PrefCheckboxes";
+import { PrefCheckboxes } from "../PrefCheckboxes/PrefCheckboxes";
 import { PopulationResponse } from "@/types/populations/populations";
 import { PrefecturesResponse } from "@/types/prefectures/prefectures";
 import PopulationLine from "../PopulationLine/PopulationLine";
 import { useState } from "react";
 import HandlePopul from "../HandlePopul/HandlePopul";
 
-export default function Pref(params: {
+export default function PageViewer(params: {
   prefs: PrefecturesResponse;
   populations: PopulationResponse[];
 }) {
