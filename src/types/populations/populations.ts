@@ -16,5 +16,5 @@ interface PopulationTypeData {
 interface PopulationBaseData {
   year: number;
   value: number;
-  rate: number;
+  rate?: number;
 }
