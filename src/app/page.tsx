@@ -22,7 +22,7 @@ export default async function Home() {
     }
   }
   return (
-    <div className="items-center justify-items-center min-h-screen p-3 sm:p-10 font-[family-name:var(--font-geist-sans)]">
+    <div className="items-center justify-items-center max-h-screen p-3 sm:p-10 font-[family-name:var(--font-geist-sans)]">
       <Suspense fallback={<>loading</>}>
         {/* <PrefCheckboxes prefs={prefectures} populations={populations} /> */}
         <Pref prefs={prefectures} populations={populations} />
