@@ -9,10 +9,10 @@ export function PrefCheckboxes(data: {
 }) {
   return (
     <div>
-      <form className="flex flex-wrap ">
+      <form className="flex flex-wrap w-full ">
         {data.prefs?.result.map((pref) => {
           return (
-            <label key={pref.prefCode} className="p-1 flex-row w-1/6">
+            <label key={pref.prefCode} className="p-1 flex flex-row w-1/3  sm:w-1/4 xl:w-1/5">
               <input
                 type="checkbox"
                 value={pref.prefCode}
