@@ -29,6 +29,7 @@ export default function PopulationLine(props: {
   const [lineData, setLineData] = useState<data>({ labels: [], datasets: [] });
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legened: {
         position: "buttom"
@@ -70,8 +71,12 @@ export default function PopulationLine(props: {
   }
 
   return (
-    <div className="bg-blue-50 min-w-full max-h-screen">
-      <Line options={options} data={lineData} />
+    <div className="bg-blue-50 min-w-full max-w-full h-96 max-h-screen">
+      <Line
+        className="min-w-full max-w-full min-h-full max-h-full"
+        options={options}
+        data={lineData}
+      />
     </div>
   );
 }

@@ -66,7 +66,7 @@ const prefectures: PrefecturesResponse = {
   ]
 };
 
-const checkedPrefectures: number[] = [];
+const checkedPrefectures: number[] = [1];
 
 describe("PopulationLine", () => {
   beforeEach(() => {
@@ -75,6 +75,7 @@ describe("PopulationLine", () => {
         populations={population}
         prefectures={prefectures}
         checkedPrefectures={checkedPrefectures}
+        selectedPopulType={0}
       />
     );
   });
