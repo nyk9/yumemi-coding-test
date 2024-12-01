@@ -72,7 +72,11 @@ export default function PopulationLine(props: {
 
   return (
     <div className="bg-blue-50 min-w-full max-w-full h-96 max-h-screen">
-      <Line className="min-w-full max-w-full min-h-full max-h-full" options={options} data={lineData} />
+      <Line
+        className="min-w-full max-w-full min-h-full max-h-full"
+        options={options}
+        data={lineData}
+      />
     </div>
   );
 }
