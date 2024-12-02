@@ -1,6 +1,6 @@
 "use client";
 
-import { setPrefColors } from "@/types/prefectures/setPrefColors";
+import { setPrefColors } from "@/constants/setPrefColors";
 import { PrefecturesResponse } from "@/types/prefectures/prefectures";
 
 export function PrefCheckboxes(data: {
