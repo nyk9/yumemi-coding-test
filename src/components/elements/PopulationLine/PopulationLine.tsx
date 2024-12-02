@@ -3,7 +3,6 @@
 import { Line } from "react-chartjs-2";
 import { useEffect, useState } from "react";
 import { PopulationResponse } from "@/types/populations/populations";
-// import { usePrefectures } from "@/hooks/usePrefectures";
 import { data } from "@/types/lines/lines";
 import { getPrefName } from "@/lib/getPrefectures";
 import { PrefecturesResponse } from "@/types/prefectures/prefectures";
@@ -17,7 +16,7 @@ import {
   Title,
   Tooltip
 } from "chart.js";
-import { setPrefColors } from "@/types/prefectures/setPrefColors";
+import { setPrefColors } from "@/constants/setPrefColors";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function PopulationLine(props: {
